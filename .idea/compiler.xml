@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zk-boot-cache" />
+        <module name="zk-boot-mq" />
+        <module name="zk-boot-pojo" />
+        <module name="zk-boot-sso" />
+        <module name="zk-boot-utils" />
+        <module name="zk-boot-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zk-boot-cache" target="1.8" />
+      <module name="zk-boot-mq" target="1.8" />
+      <module name="zk-boot-parent" target="1.8" />
+      <module name="zk-boot-parent (1)" target="1.8" />
+      <module name="zk-boot-pojo" target="1.8" />
+      <module name="zk-boot-sso" target="1.8" />
+      <module name="zk-boot-utils" target="1.8" />
+      <module name="zk-boot-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

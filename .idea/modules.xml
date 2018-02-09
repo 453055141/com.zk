@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-cache/zk-boot-cache.iml" filepath="$PROJECT_DIR$/zk-boot-cache/zk-boot-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-mq/zk-boot-mq.iml" filepath="$PROJECT_DIR$/zk-boot-mq/zk-boot-mq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-parent/zk-boot-parent.iml" filepath="$PROJECT_DIR$/zk-boot-parent/zk-boot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-pojo/zk-boot-pojo.iml" filepath="$PROJECT_DIR$/zk-boot-pojo/zk-boot-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-sso/zk-boot-sso.iml" filepath="$PROJECT_DIR$/zk-boot-sso/zk-boot-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-utils/zk-boot-utils.iml" filepath="$PROJECT_DIR$/zk-boot-utils/zk-boot-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-boot-web/zk-boot-web.iml" filepath="$PROJECT_DIR$/zk-boot-web/zk-boot-web.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,304 @@
+2018-01-25 21:39:29.747 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:29.755 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:35.751 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=1, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:35.760 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=1, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:41.756 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=2, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:41.776 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=2, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:47.761 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=3, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:47.780 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=3, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:53.774 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=4, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:53.791 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=4, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:59.778 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=5, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:39:59.795 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=5, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:05.786 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=6, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:05.801 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=6, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:11.793 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=7, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:11.813 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=7, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:17.808 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=8, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:17.842 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=8, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:23.826 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=9, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:23.857 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=9, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:29.842 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=10, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:29.872 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=10, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:35.858 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=11, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:35.882 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=11, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:41.873 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=12, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:41.896 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=12, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:47.887 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=13, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:47.911 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=13, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:53.894 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=14, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 21:40:53.916 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'mytest.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=14, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+2018-01-25 22:34:47.036 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 22:35:35.735 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 22:39:12.690 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 22:44:03.725 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 22:44:36.909 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 22:48:29.138 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 22:50:29.933 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 22:53:48.807 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 22:55:06.108 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 23:02:53.399 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 23:08:11.802 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
+2018-01-25 23:08:41.162 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:27:49.826 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:31:17.078 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:35:57.331 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:45:14.351 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:47:57.579 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:49:30.352 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-25 23:53:04.977 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+

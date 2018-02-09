@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zk-boot-sso:war">
+    <output-path>$PROJECT_DIR$/zk-boot-sso/target</output-path>
+    <root id="archive" name="zk-boot-sso-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="zk-boot-sso:war exploded" />
+    </root>
+  </artifact>
+</component>

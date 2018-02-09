@@ -1,0 +1,237 @@
+2018-01-28 08:36:18.971 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-28 08:38:09.415 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'my-queue1' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Failed to grow the connection pool; nested exception is com.atomikos.datasource.pool.CreateConnectionException: error creating JMS connection
+com.atomikos.jms.AtomikosJMSException: Failed to grow the connection pool
+	at com.atomikos.jms.AtomikosJMSException.throwAtomikosJMSException(AtomikosJMSException.java:55)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.throwAtomikosJMSException(AtomikosConnectionFactoryBean.java:178)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:618)
+	at org.springframework.jms.support.JmsAccessor.createConnection(JmsAccessor.java:180)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer.refreshConnectionUntilSuccessful(DefaultMessageListenerContainer.java:928)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer.recoverAfterListenerSetupFailure(DefaultMessageListenerContainer.java:899)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1077)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.atomikos.datasource.pool.CreateConnectionException: error creating JMS connection
+	at com.atomikos.jms.AtomikosJmsXAConnectionFactory.createPooledConnection(AtomikosJmsXAConnectionFactory.java:61)
+	at com.atomikos.datasource.pool.ConnectionPool.createPooledConnection(ConnectionPool.java:116)
+	at com.atomikos.datasource.pool.ConnectionPool.growPool(ConnectionPool.java:225)
+	at com.atomikos.datasource.pool.ConnectionPool.retrieveFirstAvailableConnectionAndGrowPoolIfNecessary(ConnectionPool.java:175)
+	at com.atomikos.datasource.pool.ConnectionPool.findOrWaitForAnAvailableConnection(ConnectionPool.java:160)
+	at com.atomikos.datasource.pool.ConnectionPool.borrowConnection(ConnectionPool.java:151)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:616)
+	... 5 common frames omitted
+Caused by: javax.jms.JMSException: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:36)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:374)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:304)
+	at org.apache.activemq.ActiveMQXAConnectionFactory.createXAConnection(ActiveMQXAConnectionFactory.java:60)
+	at com.atomikos.jms.AtomikosJmsXAConnectionFactory.createPooledConnection(AtomikosJmsXAConnectionFactory.java:58)
+	... 11 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.activemq.transport.tcp.TcpTransport.connect(TcpTransport.java:525)
+	at org.apache.activemq.transport.tcp.TcpTransport.doStart(TcpTransport.java:488)
+	at org.apache.activemq.util.ServiceSupport.start(ServiceSupport.java:55)
+	at org.apache.activemq.transport.AbstractInactivityMonitor.start(AbstractInactivityMonitor.java:169)
+	at org.apache.activemq.transport.InactivityMonitor.start(InactivityMonitor.java:52)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.transport.WireFormatNegotiator.start(WireFormatNegotiator.java:72)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:354)
+	... 14 common frames omitted
+2018-01-28 08:38:11.430 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'out.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Failed to grow the connection pool; nested exception is com.atomikos.datasource.pool.CreateConnectionException: error creating JMS connection
+com.atomikos.jms.AtomikosJMSException: Failed to grow the connection pool
+	at com.atomikos.jms.AtomikosJMSException.throwAtomikosJMSException(AtomikosJMSException.java:55)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.throwAtomikosJMSException(AtomikosConnectionFactoryBean.java:178)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:618)
+	at org.springframework.jms.support.JmsAccessor.createConnection(JmsAccessor.java:180)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer.refreshConnectionUntilSuccessful(DefaultMessageListenerContainer.java:928)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer.recoverAfterListenerSetupFailure(DefaultMessageListenerContainer.java:899)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1077)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.atomikos.datasource.pool.CreateConnectionException: error creating JMS connection
+	at com.atomikos.jms.AtomikosJmsXAConnectionFactory.createPooledConnection(AtomikosJmsXAConnectionFactory.java:61)
+	at com.atomikos.datasource.pool.ConnectionPool.createPooledConnection(ConnectionPool.java:116)
+	at com.atomikos.datasource.pool.ConnectionPool.growPool(ConnectionPool.java:225)
+	at com.atomikos.datasource.pool.ConnectionPool.retrieveFirstAvailableConnectionAndGrowPoolIfNecessary(ConnectionPool.java:175)
+	at com.atomikos.datasource.pool.ConnectionPool.findOrWaitForAnAvailableConnection(ConnectionPool.java:160)
+	at com.atomikos.datasource.pool.ConnectionPool.borrowConnection(ConnectionPool.java:151)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:616)
+	... 5 common frames omitted
+Caused by: javax.jms.JMSException: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:36)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:374)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:304)
+	at org.apache.activemq.ActiveMQXAConnectionFactory.createXAConnection(ActiveMQXAConnectionFactory.java:60)
+	at com.atomikos.jms.AtomikosJmsXAConnectionFactory.createPooledConnection(AtomikosJmsXAConnectionFactory.java:58)
+	... 11 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.activemq.transport.tcp.TcpTransport.connect(TcpTransport.java:525)
+	at org.apache.activemq.transport.tcp.TcpTransport.doStart(TcpTransport.java:488)
+	at org.apache.activemq.util.ServiceSupport.start(ServiceSupport.java:55)
+	at org.apache.activemq.transport.AbstractInactivityMonitor.start(AbstractInactivityMonitor.java:169)
+	at org.apache.activemq.transport.InactivityMonitor.start(InactivityMonitor.java:52)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.transport.WireFormatNegotiator.start(WireFormatNegotiator.java:72)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:354)
+	... 14 common frames omitted
+2018-01-28 08:38:12.442 [DefaultMessageListenerContainer-1] ERROR o.s.jms.listener.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'my-queue2' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Failed to grow the connection pool; nested exception is com.atomikos.datasource.pool.CreateConnectionException: error creating JMS connection
+com.atomikos.jms.AtomikosJMSException: Failed to grow the connection pool
+	at com.atomikos.jms.AtomikosJMSException.throwAtomikosJMSException(AtomikosJMSException.java:55)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.throwAtomikosJMSException(AtomikosConnectionFactoryBean.java:178)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:618)
+	at org.springframework.jms.support.JmsAccessor.createConnection(JmsAccessor.java:180)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer.refreshConnectionUntilSuccessful(DefaultMessageListenerContainer.java:928)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer.recoverAfterListenerSetupFailure(DefaultMessageListenerContainer.java:899)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1077)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.atomikos.datasource.pool.CreateConnectionException: error creating JMS connection
+	at com.atomikos.jms.AtomikosJmsXAConnectionFactory.createPooledConnection(AtomikosJmsXAConnectionFactory.java:61)
+	at com.atomikos.datasource.pool.ConnectionPool.createPooledConnection(ConnectionPool.java:116)
+	at com.atomikos.datasource.pool.ConnectionPool.growPool(ConnectionPool.java:225)
+	at com.atomikos.datasource.pool.ConnectionPool.retrieveFirstAvailableConnectionAndGrowPoolIfNecessary(ConnectionPool.java:175)
+	at com.atomikos.datasource.pool.ConnectionPool.findOrWaitForAnAvailableConnection(ConnectionPool.java:160)
+	at com.atomikos.datasource.pool.ConnectionPool.borrowConnection(ConnectionPool.java:151)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:616)
+	... 5 common frames omitted
+Caused by: javax.jms.JMSException: Could not connect to broker URL: tcp://127.0.0.1:61616. Reason: java.net.ConnectException: Connection refused: connect
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:36)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:374)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:304)
+	at org.apache.activemq.ActiveMQXAConnectionFactory.createXAConnection(ActiveMQXAConnectionFactory.java:60)
+	at com.atomikos.jms.AtomikosJmsXAConnectionFactory.createPooledConnection(AtomikosJmsXAConnectionFactory.java:58)
+	... 11 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.activemq.transport.tcp.TcpTransport.connect(TcpTransport.java:525)
+	at org.apache.activemq.transport.tcp.TcpTransport.doStart(TcpTransport.java:488)
+	at org.apache.activemq.util.ServiceSupport.start(ServiceSupport.java:55)
+	at org.apache.activemq.transport.AbstractInactivityMonitor.start(AbstractInactivityMonitor.java:169)
+	at org.apache.activemq.transport.InactivityMonitor.start(InactivityMonitor.java:52)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.transport.WireFormatNegotiator.start(WireFormatNegotiator.java:72)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:64)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:354)
+	... 14 common frames omitted
+2018-01-28 09:02:55.754 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-28 09:08:22.405 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-28 10:18:23.486 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-28 10:20:17.441 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-28 11:03:47.678 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database url for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2018-01-28 14:28:32.871 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activeProducter in com.zk.zkbootweb.controller.ActivemqController required a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zk.zkbootmq.ActiveMq.ActiveProducter' in your configuration.
+
