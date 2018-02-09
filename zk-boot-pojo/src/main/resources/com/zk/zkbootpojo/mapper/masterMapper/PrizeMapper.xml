@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zk.zkbootpojo.mapper.masterMapper.PrizeMapper" >
+  <resultMap id="BaseResultMap" type="com.zk.zkbootpojo.entity.masterModel.Prize" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="prize_name" property="prizeName" jdbcType="VARCHAR" />
+    <result column="prize_num" property="prizeNum" jdbcType="INTEGER" />
+    <result column="residue_num" property="residueNum" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="prize_prob" property="prizeProb" jdbcType="DOUBLE" />
+    <result column="lottery_exp" property="lotteryExp" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="creat_time" property="creatTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, prize_name, prize_num, residue_num, user_id, prize_prob, lottery_exp, status, 
+    creat_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zk.zkbootpojo.entity.masterModel.PrizeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from prize
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from prize
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from prize
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zk.zkbootpojo.entity.masterModel.PrizeExample" >
+    delete from prize
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zk.zkbootpojo.entity.masterModel.Prize" >
+    insert into prize (id, prize_name, prize_num, 
+      residue_num, user_id, prize_prob, 
+      lottery_exp, status, creat_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{prizeName,jdbcType=VARCHAR}, #{prizeNum,jdbcType=INTEGER}, 
+      #{residueNum,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{prizeProb,jdbcType=DOUBLE}, 
+      #{lotteryExp,jdbcType=TIMESTAMP}, #{status,jdbcType=BIT}, #{creatTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zk.zkbootpojo.entity.masterModel.Prize" >
+    insert into prize
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="prizeName != null" >
+        prize_name,
+      </if>
+      <if test="prizeNum != null" >
+        prize_num,
+      </if>
+      <if test="residueNum != null" >
+        residue_num,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="prizeProb != null" >
+        prize_prob,
+      </if>
+      <if test="lotteryExp != null" >
+        lottery_exp,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="creatTime != null" >
+        creat_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="prizeName != null" >
+        #{prizeName,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeNum != null" >
+        #{prizeNum,jdbcType=INTEGER},
+      </if>
+      <if test="residueNum != null" >
+        #{residueNum,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeProb != null" >
+        #{prizeProb,jdbcType=DOUBLE},
+      </if>
+      <if test="lotteryExp != null" >
+        #{lotteryExp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="creatTime != null" >
+        #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zk.zkbootpojo.entity.masterModel.PrizeExample" resultType="java.lang.Integer" >
+    select count(*) from prize
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update prize
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.prizeName != null" >
+        prize_name = #{record.prizeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prizeNum != null" >
+        prize_num = #{record.prizeNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.residueNum != null" >
+        residue_num = #{record.residueNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prizeProb != null" >
+        prize_prob = #{record.prizeProb,jdbcType=DOUBLE},
+      </if>
+      <if test="record.lotteryExp != null" >
+        lottery_exp = #{record.lotteryExp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.creatTime != null" >
+        creat_time = #{record.creatTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update prize
+    set id = #{record.id,jdbcType=INTEGER},
+      prize_name = #{record.prizeName,jdbcType=VARCHAR},
+      prize_num = #{record.prizeNum,jdbcType=INTEGER},
+      residue_num = #{record.residueNum,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      prize_prob = #{record.prizeProb,jdbcType=DOUBLE},
+      lottery_exp = #{record.lotteryExp,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=BIT},
+      creat_time = #{record.creatTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zk.zkbootpojo.entity.masterModel.Prize" >
+    update prize
+    <set >
+      <if test="prizeName != null" >
+        prize_name = #{prizeName,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeNum != null" >
+        prize_num = #{prizeNum,jdbcType=INTEGER},
+      </if>
+      <if test="residueNum != null" >
+        residue_num = #{residueNum,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="prizeProb != null" >
+        prize_prob = #{prizeProb,jdbcType=DOUBLE},
+      </if>
+      <if test="lotteryExp != null" >
+        lottery_exp = #{lotteryExp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="creatTime != null" >
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zk.zkbootpojo.entity.masterModel.Prize" >
+    update prize
+    set prize_name = #{prizeName,jdbcType=VARCHAR},
+      prize_num = #{prizeNum,jdbcType=INTEGER},
+      residue_num = #{residueNum,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=VARCHAR},
+      prize_prob = #{prizeProb,jdbcType=DOUBLE},
+      lottery_exp = #{lotteryExp,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=BIT},
+      creat_time = #{creatTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

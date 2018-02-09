@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+
+
+        <commentGenerator>
+            <property name="autoDelimitKeywords" value="false"/>
+
+            <!-- 生成的Java文件的编码-->
+            <property name="javaFileEncoding" value="UTF-8"/>
+
+            <!-- 格式化java代码-->
+            <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+
+            <!-- 格式化XML代码-->
+            <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- 数据库A -->
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+                        <!--connectionURL="jdbc:mysql://119.23.106.184:3306/zk_project?useUnicode=true&amp;characterEncoding=UTF-8"-->
+                        <!--userId="zengkai"-->
+                        <!--password="1992111" />-->
+
+        <!--<javaModelGenerator targetPackage="com.zk.zkbootpojo.entity.masterModel" targetProject="src/main/java" />-->
+
+        <!--<sqlMapGenerator targetPackage="com.zk.zkbootpojo.mapper.masterMapper" targetProject="src/main/resources" />-->
+
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.zk.zkbootpojo.mapper.masterMapper" targetProject="src/main/java" />-->
+
+        <!--<table tableName="members"/>-->
+        <!--<table tableName="prize"/>-->
+        <!--<table tableName="prize_user"/>-->
+
+
+        <!-- 数据库B -->
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://119.23.106.184:3306/zk_project_two?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="zengkai"
+                        password="1992111" />
+
+        <javaModelGenerator targetPackage="com.zk.zkbootpojo.entity.clusterModel" targetProject="src/main/java" />
+
+        <sqlMapGenerator targetPackage="com.zk.zkbootpojo.mapper.clusterMapper" targetProject="src/main/resources" />
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zk.zkbootpojo.mapper.clusterMapper" targetProject="src/main/java" />
+
+        <table tableName="members_two"/>
+
+    </context>
+
+</generatorConfiguration>
