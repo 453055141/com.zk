@@ -17,6 +17,7 @@
         <module name="zk-boot-sso" />
         <module name="zk-boot-utils" />
         <module name="zk-boot-web" />
+        <module name="zk-cloud-configclient" />
         <module name="zk-cloud-configserver" />
         <module name="zk-cloud-eurekaclient" />
         <module name="zk-cloud-eurekaserver" />
@@ -41,6 +42,7 @@
       <module name="zk-boot-sso" target="1.8" />
       <module name="zk-boot-utils" target="1.8" />
       <module name="zk-boot-web" target="1.8" />
+      <module name="zk-cloud-configclient" target="1.8" />
       <module name="zk-cloud-configserver" target="1.8" />
       <module name="zk-cloud-eureka-server" target="1.8" />
       <module name="zk-cloud-eurekaclient" target="1.8" />

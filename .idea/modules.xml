@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/zk-boot-sso/zk-boot-sso.iml" filepath="$PROJECT_DIR$/zk-boot-sso/zk-boot-sso.iml" />
       <module fileurl="file://$PROJECT_DIR$/zk-boot-utils/zk-boot-utils.iml" filepath="$PROJECT_DIR$/zk-boot-utils/zk-boot-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/zk-boot-web/zk-boot-web.iml" filepath="$PROJECT_DIR$/zk-boot-web/zk-boot-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zk-cloud-configclient/zk-cloud-configclient.iml" filepath="$PROJECT_DIR$/zk-cloud-configclient/zk-cloud-configclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/zk-cloud-configserver/zk-cloud-configserver.iml" filepath="$PROJECT_DIR$/zk-cloud-configserver/zk-cloud-configserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/zk-cloud-eurekaclient/zk-cloud-eurekaclient.iml" filepath="$PROJECT_DIR$/zk-cloud-eurekaclient/zk-cloud-eurekaclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/zk-cloud-eurekaserver/zk-cloud-eurekaserver.iml" filepath="$PROJECT_DIR$/zk-cloud-eurekaserver/zk-cloud-eurekaserver.iml" />

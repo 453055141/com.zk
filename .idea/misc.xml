@@ -26,6 +26,7 @@
         <option value="$PROJECT_DIR$/zk-cloud-hystrix-turbine/pom.xml" />
         <option value="$PROJECT_DIR$/zk-cloud-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/zk-cloud-configserver/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-configclient/pom.xml" />
       </list>
     </option>
   </component>
