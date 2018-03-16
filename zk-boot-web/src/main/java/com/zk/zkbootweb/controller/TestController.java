@@ -1,19 +1,14 @@
 package com.zk.zkbootweb.controller;
 
 import com.alibaba.fastjson.JSONObject;
-//import com.zk.zkbootcache.redisutils.RedisUtils;
-import com.zk.zkbootutils.ZkTest;
 import com.zk.zkbootweb.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
+        import org.springframework.web.bind.annotation.RestController;
+import redis.clients.jedis.JedisCluster;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,8 +18,8 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-//    @Autowired
-//    private RedisUtils redisUtils;
+    @Autowired
+    private JedisCluster jedisCluster;
 
     @RequestMapping("finduserinfo")
     public String findUserInfo(HttpServletRequest request, HttpServletResponse response){
@@ -32,18 +27,13 @@ public class TestController {
         return name;
     }
 
-//    @RequestMapping("utils")
-//    public String utilsTest(HttpServletRequest request, HttpServletResponse response){
-//        String name = ZkTest.sentMessage();
-//        return name;
-//    }
 
-//    @RequestMapping("/setredis")
-//    public String setRedis(){
-//        redisUtils.set("name","曾凯".toString());
-//        String string = (String) redisUtils.get("name");
-//        return string;
-//    }
+    @RequestMapping("/setredis")
+    public String setRedis(){
+        jedisCluster.set("name","曾凯");
+        String name = jedisCluster.get("name");
+        return name;
+    }
 
     @RequestMapping("/getprize")
     public String getPrize(){
@@ -51,14 +41,15 @@ public class TestController {
         return prize;
     }
 
-//    @RequestMapping("/redis")
-//    public String redis(){
-//        Map<String,Object> map = new HashMap<>();
-//        map.put("name","曾凯");
-//        map.put("age",27);
-//        JSONObject object = new JSONObject(map);
-//        redisUtils.set("userinfo",object.toJSONString());
-//        String string = (String) redisUtils.get("userinfo");
-//        return string;
-//    }
+    @RequestMapping("/redis")
+    public String redis(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("name","曾凯");
+        map.put("age",27);
+        JSONObject object = new JSONObject(map);
+        jedisCluster.set("userinfo",object.toJSONString());
+        String string = (String) jedisCluster.get("userinfo");
+        return string;
+    }
+
 }

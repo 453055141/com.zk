@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/zk-boot-mq" />
+    <file type="web" url="file://$PROJECT_DIR$/zk-boot-que" />
     <file type="web" url="file://$PROJECT_DIR$/zk-boot-sso" />
     <file type="web" url="file://$PROJECT_DIR$/zk-boot-web" />
   </component>
@@ -15,10 +15,21 @@
         <option value="$PROJECT_DIR$/zk-boot-sso/pom.xml" />
         <option value="$PROJECT_DIR$/zk-boot-mq/pom.xml" />
         <option value="$PROJECT_DIR$/zk-boot-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-boot-comm/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-boot-crawler/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-boot-exception/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-boot-queue/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-eurekaserver/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-eurekaclient/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-fegin/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-hystrix-turbine/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-cloud-configserver/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

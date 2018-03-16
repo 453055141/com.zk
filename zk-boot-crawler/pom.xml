@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.zk</groupId>
+	<artifactId>zk-boot-crawler</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>zk-boot-crawler</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.zk</groupId>
+		<artifactId>zk-boot-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+        <dependency>
+            <groupId>com.zk</groupId>
+            <artifactId>zk-boot-pojo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zk</groupId>
+            <artifactId>zk-boot-cache</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.zk</groupId>-->
+			<!--<artifactId>zk-boot-mq</artifactId>-->
+			<!--<version>0.0.1-SNAPSHOT</version>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- 爬虫 -->
+
+		<dependency>
+			<groupId>edu.uci.ics</groupId>
+			<artifactId>crawler4j</artifactId>
+			<version>4.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jackcess</artifactId>
+					<groupId>com.healthmarketscience.jackcess</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>zkbootcrawler</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- spring-boot:run 中文乱码解决 -->
+				<configuration>
+					<fork>true</fork>
+					<!--增加jvm参数-->
+					<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+				</configuration>
+				<dependencies>
+					<!-- spring热部署 需要使用springboot:run命令生效-->
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>RELEASE</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--<plugin>-->
+			<!--<groupId>org.apache.tomcat.maven</groupId>-->
+			<!--<artifactId>tomcat7-maven-plugin</artifactId>-->
+			<!--<version>2.2</version>-->
+			<!--<configuration>-->
+			<!--<url>http://119.23.106.184:8080/manager/text</url>-->
+			<!--<port>8080</port>-->
+			<!--<server>tomcat</server>-->
+			<!--<username>tomcat</username>-->
+			<!--<password>tomcat</password>-->
+			<!--<update>true</update>-->
+			<!--<path>/zkbootsso</path>-->
+			<!--</configuration>-->
+			<!--</plugin>-->
+		</plugins>
+	</build>
+
+</project>

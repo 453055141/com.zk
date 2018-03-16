@@ -24,7 +24,7 @@ public class WebLogAspect {
 
     ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-    @Pointcut("execution(public * com.zk.boot.zkbootweb.controller..*.*(..))")
+    @Pointcut("execution(public * com.zk.zkbootweb.controller.*.*(..))")
     public void webLog(){}
 
     @Before("webLog()")
@@ -34,7 +34,7 @@ public class WebLogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
-        // 记录下请求内容
+        // 记录下请求内容,记录等级必须小于或等于日志文件的等级才能写入。
         logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP_METHOD : " + request.getMethod());
         logger.info("IP : " + request.getRemoteAddr());

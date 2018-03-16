@@ -7,22 +7,49 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="zk-boot-cache" />
+        <module name="zk-boot-comm" />
+        <module name="zk-boot-crawler" />
+        <module name="zk-boot-eureka" />
+        <module name="zk-boot-exception" />
         <module name="zk-boot-mq" />
         <module name="zk-boot-pojo" />
+        <module name="zk-boot-queue" />
         <module name="zk-boot-sso" />
         <module name="zk-boot-utils" />
         <module name="zk-boot-web" />
+        <module name="zk-cloud-configserver" />
+        <module name="zk-cloud-eurekaclient" />
+        <module name="zk-cloud-eurekaserver" />
+        <module name="zk-cloud-fegin" />
+        <module name="zk-cloud-hystrix-turbine" />
+        <module name="zk-cloud-ribbon" />
+        <module name="zk-cloud-test" />
+        <module name="zk-cloud-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="zk-boot-cache" target="1.8" />
+      <module name="zk-boot-comm" target="1.8" />
+      <module name="zk-boot-crawler" target="1.8" />
+      <module name="zk-boot-eureka" target="1.8" />
+      <module name="zk-boot-exception" target="1.8" />
       <module name="zk-boot-mq" target="1.8" />
       <module name="zk-boot-parent" target="1.8" />
       <module name="zk-boot-parent (1)" target="1.8" />
       <module name="zk-boot-pojo" target="1.8" />
+      <module name="zk-boot-queue" target="1.8" />
       <module name="zk-boot-sso" target="1.8" />
       <module name="zk-boot-utils" target="1.8" />
       <module name="zk-boot-web" target="1.8" />
+      <module name="zk-cloud-configserver" target="1.8" />
+      <module name="zk-cloud-eureka-server" target="1.8" />
+      <module name="zk-cloud-eurekaclient" target="1.8" />
+      <module name="zk-cloud-eurekaserver" target="1.8" />
+      <module name="zk-cloud-fegin" target="1.8" />
+      <module name="zk-cloud-hystrix-turbine" target="1.8" />
+      <module name="zk-cloud-ribbon" target="1.8" />
+      <module name="zk-cloud-test" target="1.8" />
+      <module name="zk-cloud-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

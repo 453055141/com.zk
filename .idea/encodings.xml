@@ -2,14 +2,27 @@
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/zk-boot-cache" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/zk-boot-mq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-boot-comm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-boot-crawler" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-boot-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-boot-exception" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zk-boot-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zk-boot-pojo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zk-boot-pojo/.mvn" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-boot-que" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-boot-queue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zk-boot-sso" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zk-boot-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zk-boot-web" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/zk-boot-web/tmlog2.log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-configserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-eurekaclient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-eurekaserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-fegin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-hystrix-turbine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-cloud-zuul" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -6,17 +6,11 @@
 	<groupId>com.zk</groupId>
 	<artifactId>zk-boot-sso</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>zk-boot-sso</name>
 	<description>Demo project for Spring Boot</description>
 
-	<!--<parent>-->
-		<!--<groupId>org.springframework.boot</groupId>-->
-		<!--<artifactId>spring-boot-starter-parent</artifactId>-->
-		<!--<version>1.5.9.RELEASE</version>-->
-		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-	<!--</parent>-->
 
 	<parent>
 		<groupId>com.zk</groupId>
@@ -26,40 +20,130 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+        <java.version>1.8</java.version>
+		<!-- maven方式跳过maven test, 等同$ mvn package -Dmaven.test.skip=true -->
+		<!-- 跳过单元测试的运行，也跳过测试代码的编译 -->
+		 <maven.test.skip>true</maven.test.skip>
+		<!-- surefire plugin方式跳过maven test， 等同$ mvn package -DskipTests -->
+		<!-- 跳过单元测试，但是会继续编译；如果没时间修改单元测试的bug，或者单元测试编译错误。使用上面的，不要用这个 -->
+		<!--<skiptests>true</skiptests>-->
 	</properties>
 
 	<dependencies>
-		<!--<dependency>-->
-			<!--<groupId>com.zk</groupId>-->
-			<!--<artifactId>zk-boot-parent</artifactId>-->
-			<!--<version>0.0.1-SNAPSHOT</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.zk</groupId>
+			<artifactId>zk-boot-exception</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>com.zk</groupId>
 			<artifactId>zk-boot-pojo</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-web</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.zk</groupId>
+			<artifactId>zk-boot-cache</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>sockjs-client</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>stomp-websocket</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!--swagger2 integration -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
+		<finalName>zkbootsso</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- spring-boot:run 中文乱码解决 -->
+				<configuration>
+					<fork>true</fork>
+					<!--增加jvm参数-->
+					<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+				</configuration>
+				<dependencies>
+					<!-- spring热部署 需要使用springboot:run命令生效-->
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>RELEASE</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.apache.tomcat.maven</groupId>-->
+				<!--<artifactId>tomcat7-maven-plugin</artifactId>-->
+				<!--<version>2.2</version>-->
+				<!--<configuration>-->
+					<!--<url>http://119.23.106.184:8080/manager/text</url>-->
+					<!--<port>8080</port>-->
+					<!--<server>tomcat</server>-->
+					<!--<username>tomcat</username>-->
+					<!--<password>tomcat</password>-->
+					<!--<update>true</update>-->
+					<!--<path>/zkbootsso</path>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
 		</plugins>
 	</build>
-
+	<!--<repositories>-->
+		<!--<repository>-->
+			<!--<id>spring-milestone</id>-->
+			<!--<url>http://repo.spring.io/libs-release</url>-->
+		<!--</repository>-->
+	<!--</repositories>-->
 
 </project>
