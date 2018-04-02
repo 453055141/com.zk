@@ -29,10 +29,16 @@
 		<!--<skiptests>true</skiptests>-->
 	</properties>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>com.zk</groupId>
 			<artifactId>zk-boot-exception</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zk</groupId>
+			<artifactId>zk-boot-queue</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -93,7 +99,8 @@
 			<scope>test</scope>
 		</dependency>
 
-	</dependencies>
+
+    </dependencies>
 
 	<build>
 		<finalName>zkbootsso</finalName>
