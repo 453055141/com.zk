@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册</title>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #EFEFF4;
+}
+
+img {
+	width: 97px;
+	height: 126px;
+	margin: 50px auto;
+	display: block;
+}
+
+input, .getN {
+	width: 100%;
+	height: 53px;
+	margin-top: -1px;
+	border: 1px solid #D4D4D4;
+	text-indent: 25px;
+	font-size: 14px;
+	border-left: none;
+	border-right: none;
+}
+
+.getN {
+	width: 25%;
+	text-align: center;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 55px;
+	line-height: 53px;
+	background-color: #F2B643;
+	border: none;
+	color: #774E00;
+	text-indent: 0px;
+}
+
+.black {
+	background-color: #000;
+}
+
+.twoinput {
+	position: relative;
+}
+
+#btuI {
+	margin: 50px auto;
+	width: 90%;
+	border-radius: 30px;
+	height: 53px;
+	background-color: #F2B643;
+	border: none;
+	color: #774E00;
+	display: block;
+	font-size: 18px;
+}
+</style>
+
+</head>
+
+<body>
+	<div>
+		<img src="logo.png">
+		<div>
+			<input type="text" placeholder="请输入手机号" id="username" name="username"
+				class="register_num" maxlength="11"
+				onkeyup="this.value= this.value.match(/\d+(\d{0,2})?/) ? this.value.match(/\d+(\d{0,2})?/)[0] : ''">
+			<div class="twoinput">
+				<input type="text" placeholder="请输入验证码" class="register_get_code"
+					id="smscode" name="smscode" maxlength="6"> <input
+					type="button" value="获取验证码" class="getN" onclick="get_code();"
+					id="btnVerificode">
+			</div>
+			<div class="twoinput">
+				<input type="hidden" id="rf" name="rf" value="" /> <input
+					type="text" placeholder="请输入图片验证码" id="randcode" name="randcode">
+				<img onclick="randomcode_refresh()" class="getN black"
+					id="randCodeImage" src="" alt="" align='bottom' />
+				<!-- 		<input type="button"   class="getN black">	 -->
+			</div>
+			<input type="text" placeholder="请输入密码" class="register_password"
+				id="pwd" name="pwd" maxlength="32"
+				onkeyup="this.value= this.value.match(/\w+/) ? this.value.match(/\w+/)[0] : ''">
+		</div>
+		<input type="button" value="注册" id="btuI"
+			class="btn btn-default btn-lg btn-block" onclick="RegSub();">
+
+	</div>
+	<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/layer.js"></script>
+	<!-- script type="text/javascript" src="/js/pageloader.js"></script-->
+	<script type="text/javascript" src="../static/js/jsencrypt.min.js"></script>
+	<script type="text/javascript" src="../static/js/md5.js"></script>
+</body>
+<script type="text/javascript">
+		function showDialog(msg){
+			return layer.open({
+				title: '提示'
+				,content: msg
+			}); 
+		}
+		
+		function openLoading(){
+			return layer.msg('加载中', {
+	    		icon: 16
+	    		,time: 0
+	    		,shade: 0.01
+	    	});
+		}
+		
+		function closeLoading(){
+			layer.closeAll('dialog');
+		}
+	    
+        // function startdowncount(txt, nowcount) {
+			// if (nowcount < 1) {
+			// 	$("#btnVerificode").val(txt).removeClass("disabled").css("background","#f09d03").attr("onclick","get_code();");
+			// } else {
+			// 	$("#btnVerificode").val(nowcount-- + "秒后重试").css("background","#9C9C9C");
+			// 	setTimeout("startdowncount('" + txt + "'," + nowcount + ")", 1000);
+			// }
+        // }
+	    //
+        // $("input:password").bind("copy cut paste",function(e){
+	    //      return false;
+	    // });
+	
+	    // function get_code(){
+	    // 	var username = $("#username").val();
+	    // 	if(username==""){
+	    // 		showDialog('手机号码不能为空！');
+		 //  		return false;
+		 //  	}
+	    // 	if (!username.match(/^((1[3-8]{1})+\d{9})$/)) {
+	    // 		showDialog('手机号码格式不正确！');
+		 //        return false;
+		 //    }
+	    //
+	    // 	$.ajax({
+	    // 		type: "POST",
+	    // 		url: "/member/register/smscode",
+	    // 		data: "username="+username,
+	    // 		dataType : 'json',
+	    // 		beforeSend: function(){
+	    // 			openLoading();
+	    // 		},
+	    // 		success: function(msg){
+	    // 			closeLoading();
+	    // 			if(msg.errcode == "0"){
+	    // 		    	var $gvc = $("#btnVerificode");
+			// 			$gvc.removeClass("btn-warning").attr("onclick","");
+			// 			startdowncount($gvc.text(), 120);
+	    // 		    }else{
+	    // 		    	showDialog(msg.errmsg);
+	    // 		    }
+	    // 		}
+	    // 	});
+	    // }
+	
+		function RegSub(){
+	    	var username = $('#username').val();
+	        var smscode  = $('#smscode').val();
+	        var pwd  = $('#pwd').val();
+	        if(username==""){
+	        	showDialog('手机号码不能为空！');
+	        	return false;
+	        }else if(pwd =="" || pwd == null){
+	        	showDialog('密码不能为空！');
+		        return false;
+	       	}else if(pwd.length<6||pwd.length>32){
+	       		showDialog('密码必须为6-32位！');
+	            return false;
+	        }else if(smscode==""){
+	        	showDialog('请获取验证码！');
+	        	return false;
+	       	}else if(smscode.length!=6){
+	       		showDialog('验证码必须为6位！');
+	            return false;
+	        }else{
+	        	$.ajax({
+	        		type: "get",
+	        		url: "/secure/v1/cipher",
+	        		data: "_t="+timest(),
+	        		dataType : 'json',
+	        		beforeSend: function(){
+		    			openLoading();
+		    		},
+	        		success: function(msg){
+	        			closeLoading();
+	        			if(msg.errcode == "0"){
+	        		    	var encrypt = new JSEncrypt();
+	        	            encrypt.setPublicKey(msg.data.pk);
+	        	            $("#password").val(encrypt.encrypt(md5($("#pwd").val())));
+	        	            $("#pt").val(msg.data.p);
+	        	            
+	        		    	$.ajax({
+	        	        		type: "POST",
+	        	        		url: "/member/register",
+	        	        		data: $("#form").serializeArray(),
+	        	        		dataType : 'json',
+	        	        		beforeSend: function(){
+	        		    			openLoading();
+	        		    		},
+	        	        		success: function(msg){
+	        	        			closeLoading();
+	        	        			if(msg.errcode == "0"){
+	        	        		    	showDialog('恭喜您，成功注册为金当家的会员！');
+	        	        		    	setTimeout("location.href='http://a.app.qq.com/o/simple.jsp?pkgname=cn.golditfin.money'",3000);
+	        	        		    } else{	
+	        	        		    	showDialog(msg.errmsg);
+	        	        		    } 
+	        	        		}
+	        	        	});
+	        		     } else{
+	        		    	 showDialog(msg.errmsg);
+	        		     } 
+	        		}
+	        	});
+	        }  	   
+		}
+		
+		function timest() {
+			var tmp = Date.parse(new Date()).toString();
+			tmp = tmp.substr(0,10);
+			return tmp;
+		}
+		
+		function validBrowser(){ 
+			var u_agent = navigator.userAgent; 
+			var browser_name='Failed to identify the browser'; 
+			if(u_agent.indexOf('Firefox')>-1){ 
+				browser_name='Firefox'; 
+			}else if(u_agent.indexOf('Chrome')>-1){ 
+				browser_name='Chrome'; 
+			}else if(u_agent.indexOf('Trident')>-1&&u_agent.indexOf('rv:11')>-1){ 
+				browser_name='IE11'; 
+			}else if(u_agent.indexOf('MSIE')>-1&&u_agent.indexOf('Trident')>-1){ 
+				browser_name='IE(8-10)'; 
+			}else if(u_agent.indexOf('MSIE')>-1){ 
+				browser_name='IE(6-7)'; 
+			}else if(u_agent.indexOf('Opera')>-1){ 
+				browser_name='Opera'; 
+			}else{ 
+				browser_name+=',info:'+u_agent; 
+			}
+			return browser_name;
+		}
+		
+		$(document).ready(function () {
+			$("#channel").val(validBrowser());
+			$("#devicename").val(navigator.userAgent);
+		});
+	
+		var msg_title = "颠覆传统的黄金投资消费方式，加入金当家体验吧";
+		var msg_desc = "用金当家买卖黄金方便快捷，随时掌握金价，财富轻松到手，更有商品专区，金条金饰想换就换。";
+		var msg_link = "";
+		var msg_cdn_url = "";
+		
+		/**
+		 * 刷新验证码
+		 */
+		function randomcode_refresh() {
+			var date = new Date();
+			var img = document.getElementById("randCodeImage");
+			var rf = randomString(32);
+			document.getElementById("rf").value = rf;
+			img.src = '/validate/randcodeimg?r=' + rf;
+		}
+		function randomString(len) {
+			len = len || 32;
+			/****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+			var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+			var maxPos = $chars.length;
+			var pwd = '';
+			for (i = 0; i < len; i++) {
+			　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+			}
+			return pwd;
+		}
+    </script>
+</html>
